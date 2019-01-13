@@ -1,17 +1,15 @@
-import * as yup from "yup";
-
+// import * as yup from "yup";
 import { ResolverMap } from "../../../types/graphql-utils";
 import { User } from "../../../entity/User";
 import { formatYupError } from "../../../utils/formatYupError";
-import {
-  duplicateEmail,
-  emailNotLongEnough,
-  invalidEmail
-} from "./errorMessages";
-import { registerPasswordValidation } from "../../../yupSchemas";
+import { duplicateEmail } from "./errorMessages";
+// import { registerPasswordValidation } from "../../../yupSchemas";
+import { registerPasswordValidation, validUserSchema } from "@airbnb/common";
+
 // import { createConfirmEmailLink } from "../../utils/createConfirmEmailLink";
 // import { sendEmail } from "../../utils/sendEmail";
 
+/*
 const schema = yup.object().shape({
   email: yup
     .string()
@@ -20,7 +18,8 @@ const schema = yup.object().shape({
     .email(invalidEmail),
   password: registerPasswordValidation
 });
-
+*/
+const schema = validUserSchema;
 export const resolvers: ResolverMap = {
   Mutation: {
     register: async (

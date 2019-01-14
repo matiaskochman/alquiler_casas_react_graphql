@@ -6,15 +6,15 @@ export const invalidEmail = "email must be a valid email";
 
 export const registerPasswordValidation = yup
   .string()
-  .min(3, passwordNotLongEnough)
+  .min(4, passwordNotLongEnough)
   .required()
-  .max(255);
+  .max(8);
 
 export const validUserSchema = yup.object().shape({
   email: yup
     .string()
     .min(3, emailNotLongEnough)
-    .max(255)
+    .max(20)
     .required()
     .email(invalidEmail),
   password: registerPasswordValidation

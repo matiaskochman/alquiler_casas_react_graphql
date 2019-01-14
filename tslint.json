@@ -5,6 +5,8 @@
     "jsx-no-multiline-js": false
   },
   "rules": {
+    "jsx-no-multiline-js": 0,
+    "jsx-curly-spacing": 0,
     "no-implicit-dependencies": false,
     "no-angle-bracket-type-assertion": false,
     "no-unused-expression": false,

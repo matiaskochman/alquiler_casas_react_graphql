@@ -4,8 +4,8 @@ import { User } from "../../../entity/User";
 import { formatYupError } from "../../../utils/formatYupError";
 import { duplicateEmail } from "./errorMessages";
 // import { registerPasswordValidation } from "../../../yupSchemas";
-import { registerPasswordValidation, validUserSchema } from "@airbnb/common";
-
+// import { registerPasswordValidation, validUserSchema } from "@airbnb/common";
+import { validUserSchema } from "@airbnb/common";
 // import { createConfirmEmailLink } from "../../utils/createConfirmEmailLink";
 // import { sendEmail } from "../../utils/sendEmail";
 

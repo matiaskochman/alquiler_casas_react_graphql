@@ -1,11 +1,11 @@
 import "reflect-metadata";
-import "dotenv/config";
+// tslint:disable-next-line:no-var-requires
+require("dotenv-safe").config();
 import { GraphQLServer } from "graphql-yoga";
 import * as session from "express-session";
 import * as connectRedis from "connect-redis";
 import * as RateLimit from "express-rate-limit";
 import * as RateLimitRedisStore from "rate-limit-redis";
-
 import { redis } from "./redis";
 import { createTypeormConn } from "./utils/createTypeormConn";
 import { confirmEmail } from "./routes/confirmEmail";
@@ -67,7 +67,8 @@ export const startServer = async () => {
         ? "*"
         : (process.env.FRONTEND_HOST as string)
   };
-
+  console.log(cors, process.env.NODE_ENV);
+  
   server.express.get("/confirm/:id", confirmEmail);
 
   if (process.env.NODE_ENV === "test") {
@@ -77,9 +78,9 @@ export const startServer = async () => {
   }
   const app = await server.start({
     cors,
-    port: process.env.NODE_ENV === "test" ? 0 : 4500
+    port: process.env.NODE_ENV === "test" ? 0 : 4000
   });
-  console.log("Server is running on localhost:4500");
+  console.log("Server is running on localhost:4000");
 
   return app;
 };

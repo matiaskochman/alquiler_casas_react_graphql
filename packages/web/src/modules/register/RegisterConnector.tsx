@@ -11,7 +11,8 @@ export class RegisterConnector extends React.PureComponent {
   render() {
     return (
       <RegisterController>
-        {({ submit }: { submit: any }) => <RegisterView submit={submit} />}
+        // tslint:disable-next-line:jsx-no-multiline-js
+        {({ submit }) => <RegisterView submit={submit} />}
       </RegisterController>
     );
   }

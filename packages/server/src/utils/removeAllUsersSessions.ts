@@ -11,7 +11,8 @@ export const removeAllUsersSessions = async (userId: string, redis: Redis) => {
   const promises = [];
   // tslint:disable-next-line:prefer-for-of
   for (let i = 0; i < sessionIds.length; i += 1) {
-    promises.push(redis.del(`${redisSessionPrefix}${sessionIds[i]}`));
+    // promises.push(redis.del(`${redisSessionPrefix}${sessionIds[i]}`));
+    console.log(`error asdfadfs ${redisSessionPrefix}`);
   }
   await Promise.all(promises);
 };

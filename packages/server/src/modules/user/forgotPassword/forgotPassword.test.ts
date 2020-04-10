@@ -39,6 +39,7 @@ afterAll(async () => {
 
 describe("forgot password", () => {
   test("make sure it works", async () => {
+    console.log(process.env);
     const client = new TestClient(process.env.TEST_HOST as string);
 
     // lock account

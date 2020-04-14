@@ -21,7 +21,8 @@
   "scripts": {
     "build": "rimraf dist && tsc",
     "introspect": "apollo-codegen introspect-schema http://localhost:4000 --output schema.json",
-    "generate": "apollo-codegen generate src/**/*.tsx --schema schema.json --target typescript --output src/operation-result-types.ts",
+    "generate1": "apollo-codegen generate src/**/*.tsx --schema schema.json --target typescript --output src/operation-result-types.ts",
+    "generate": "apollo-codegen generate src/**/*.tsx --schema schema.json --target ts-modern --output src/operation-result-types.ts",
     "gen-types": "npm run introspect && npm run generate"
   }
 }

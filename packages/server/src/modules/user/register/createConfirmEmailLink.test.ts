@@ -32,7 +32,7 @@ test("Make sure it confirms user and clears key in redis", async () => {
     userId,
     redis
   );
-
+  console.log(url);
   const response = await fetch(url);
   const text = await response.text();
   expect(text).toEqual("ok");

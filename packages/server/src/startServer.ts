@@ -62,19 +62,33 @@ export const startServer = async () => {
 
   const cors = {
     credentials: true,
-    origin:
-      process.env.NODE_ENV === "test"
-        ? "*"
-        : (process.env.FRONTEND_HOST as string)
+    origin: "*"
+      // process.env.NODE_ENV === "test"
+      //   ? "*"
+      //   : (process.env.FRONTEND_HOST as string)
   };
   console.log(cors, process.env.NODE_ENV);
   
   server.express.get("/confirm/:id", confirmEmail);
 
-  if (process.env.NODE_ENV === "test") {
-    await createTestConn(true);
-  } else {
-    await createTypeormConn();
+  let retries = 5;
+
+  while(retries) {
+    try {
+      if (process.env.NODE_ENV === "test") {
+        await createTestConn(true);
+      } else {
+        await createTypeormConn();
+      }
+      break;
+    } catch(error) {
+      console.log(error);
+      retries-=1;
+      console.log(`retries left ${retries}`);
+      // wait 5 seconds
+      await new Promise(res => setTimeout(res, 5000));
+    }
+
   }
   const app = await server.start({
     cors,

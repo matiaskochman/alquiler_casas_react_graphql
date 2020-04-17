@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+    db:
+      image: "postgres:10"
+      container_name: "my_postgres_10"
+      environment:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
+        POSTGRES_DB: airbnb
+      # - POSTGRES_MULTIPLE_DATABASES=airbnb,airbnb_test        
+        # POSTGRES_PASSWORD: postgres
+        # POSTGRES_USER: postgres
+      volumes:
+        - ./pgdata10:/var/lib/postgresql/data
+      ports:
+        - "5432:5432"
+    web:
+      image: airbnb #check Dockerfile, where I build airbnb
+      depends_on:
+        - db
+      ports:
+        - "4000:4000"
+
+# docker-compose up -d
+
+# psql --host=database --username=unicorn_user --dbname=rainbow_database
+# psql -h localhost -U username databasename
+# docker logs -f my_postgres
+# $ docker exec -it my_postgres psql -U postgres
+# docker-compose down --volumes && docker build -t airbnb . && docker-compose up -d

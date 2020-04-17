@@ -13,10 +13,13 @@ COPY ./packages/server/dist ./packages/server/dist
 COPY ./packages/common/dist ./packages/common/dist
 COPY ./packages/server/.env.prod ./packages/server/.env
 COPY ./packages/server/.env.example ./packages/server/
-COPY ./ormconfig.json .
+# COPY ./ormconfig.json .
+
+COPY ./ormconfig.docker.json ./ormconfig.json
 
 WORKDIR ./packages/server
 
+# RUN ls
 ENV NODE_ENV production
 
 EXPOSE 4000
@@ -24,4 +27,4 @@ EXPOSE 4000
 CMD ["node", "dist/index.js"]
 
 # docker build -t airbnb .
-# docker run -p 4000:4000 --net="host" airbnb
+# docker run -d -p 4000:4000 --net="host" airbnb

@@ -13,7 +13,7 @@ exports.validUserSchema = yup.object().shape({
     email: yup
         .string()
         .min(3, exports.emailNotLongEnough)
-        .max(200)
+        .max(20)
         .required()
         .email(exports.invalidEmail),
     password: exports.registerPasswordValidation

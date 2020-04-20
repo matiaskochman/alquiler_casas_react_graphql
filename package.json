@@ -1,13 +1,22 @@
 {
   "private": true,
+  "scripts": {
+    "build:server": "lerna run build --scope={@airbnb/common,@airbnb/server}"
+  },
   "workspaces": {
-    "packages": ["packages/*"],
+    "packages": [
+      "packages/*"
+    ],
     "nohoist": [
-      "**/rimraf", 
+      "**/rimraf",
       "**/rimraf/**"
     ]
   },
   "dependencies": {
     "graphql-code-generator": "^0.16.1"
+  },
+  "name": "airbnb",
+  "devDependencies": {
+    "lerna": "^3.20.2"
   }
 }

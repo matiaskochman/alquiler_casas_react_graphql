@@ -22,10 +22,20 @@
     ]
   },
   "dependencies": {
-    "graphql-code-generator": "^0.16.1"
+    "apollo-cache-inmemory": "^1.6.5",
+    "apollo-client": "^2.6.8",
+    "apollo-link-http": "^1.5.17",
+    "graphql": "^15.0.0",
+    "graphql-code-generator": "^0.16.1",
+    "graphql-tag": "^2.10.3",
+    "react-apollo": "^3.1.5",
+    "react-native-elements": "^1.2.7",
+    "react-router-native": "^5.1.2"
   },
   "name": "airbnb",
   "devDependencies": {
+    "@types/react-native-elements": "^0.18.0",
+    "@types/react-router": "^5.1.5",
     "lerna": "^3.20.2"
   }
 }

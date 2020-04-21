@@ -1,0 +1,13 @@
+{
+  "DATABASE_URL":"postgres://oxmzhuzsegmryk:7f883d56007abab0788e6b763a42f1aa5a1508eca5d62c0aa4c9ef0f0dcf1d08@ec2-54-163-233-103.compute-1.amazonaws.com:5432/dbg7jjabm31g2o",
+  "NODE_VERSION":"13.12.0",
+  "YARN_VERSION":"1.22.4",
+  "PORT":"59594",
+  "HOME":"/airbnb/packages/server",
+  "PATH":"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+  "PWD":"/airbnb/packages/server",
+  "REDIS_URL":"redis://h:pb69c64138982128e4af3d0b6a4922be11d4000d8ba81c723afe5b067fafa4507@ec2-3-218-191-223.compute-1.amazonaws.com:16259",
+  "NODE_ENV":"production",
+  "DYNO":"web.1",
+  "SPARKPOST_API_KEY":"01226dcbe6702f6706eeb29439fbf8e8cb254f8d",
+  "FRONTEND_HOST":"https://5e9e042e184cba231b0d0cb9--airbnb-clone-matias.netlify.app"}

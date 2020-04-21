@@ -62,10 +62,7 @@ export const startServer = async () => {
 
   const cors = {
     credentials: true,
-    origin: "*"
-      // process.env.NODE_ENV === "test"
-      //   ? "*"
-      //   : (process.env.FRONTEND_HOST as string)
+    origin: process.env.NODE_ENV === "test"? "*" : (process.env.FRONTEND_HOST as string)
   };
   console.log(cors, process.env.NODE_ENV);
   
@@ -90,12 +87,13 @@ export const startServer = async () => {
     }
 
   }
-  const PORT = process.env.port || 4000;
+  const PORT = process.env.PORT || 4000;
   const app = await server.start({
     cors,
     port: process.env.NODE_ENV === "test" ? 0 : PORT
   });
-  console.log("Server is running on localhost:4000");
+  console.log(`Server is running on localhost:${PORT}`);
+  console.log(`environment variables: ${JSON.stringify(process.env)}`)
 
   return app;
 };

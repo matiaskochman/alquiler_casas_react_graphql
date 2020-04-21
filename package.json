@@ -11,6 +11,10 @@
     "nohoist": [
       "**/rimraf",
       "**/rimraf/**",
+      
+      "**/react-native-elements",
+      "**/react-native-elements/**",
+
       "**/react-native",
       "**/react-native/**",
       "**/expo",
@@ -18,13 +22,25 @@
       "**/react-native-typescript-transformer",
       "**/react-native-typescript-transformer/**",
       "**/metro-bundler-config-yarn-workspaces",
-      "**/metro-bundler-config-yarn-workspaces/**"
+      "**/metro-bundler-config-yarn-workspaces/**",
+      "**/react-native-vector-icons",
+      "**/react-native-vector-icons/**",
+      "**/prop-types",
+      "**/prop-types/**",
+      "**/react-router-native",
+      "**/react-router-native/**",
+      "**/apollo-cache-inmemory",
+      "**/apollo-cache-inmemory/**",
+      "**/@apollo/react-hooks",
+      "**/@apollo/react-hooks/**",
+      "**/apollo-link-http",
+      "**/apollo-link-http/**"
     ]
   },
   "dependencies": {
     "apollo-cache-inmemory": "^1.6.5",
     "apollo-client": "^2.6.8",
-    "apollo-link-http": "^1.5.17",
+    
     "graphql": "^15.0.0",
     "graphql-code-generator": "^0.16.1",
     "graphql-tag": "^2.10.3",
